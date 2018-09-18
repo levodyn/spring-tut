@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.4.RELEASE")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'org.springframework.boot' version '1.4.3.RELEASE'
+}
+
+bootJar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+
+group 'com.stef'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile (
+            'org.springframework:spring-webmvc:5.0.5.RELEASE',
+            'org.springframework.boot:spring-boot-starter-web:2.0.4.RELEASE',
+            'org.springframework.boot:spring-boot-starter-thymeleaf:2.0.4.RELEASE'
+    )
+    compile group: 'org.hashids', name: 'hashids', version: '1.0.3'
+}
